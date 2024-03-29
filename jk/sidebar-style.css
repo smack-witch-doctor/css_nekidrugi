@@ -1,0 +1,42 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
+/*custom fancy menu*/
+
+.menu-wrapper{
+    display:block;
+    min-height: 100%;
+}
+
+.sidebar{
+    transform:translate3d(-260px, 0px, 0px);
+    position: absolute;
+    width:260px;
+    /*background: #2652cc*/
+    color:#eee;
+    left: 0;
+    height: 100%;
+    transform: all .3s;
+}
+
+input[data-function*='swipe'] {
+
+    position:relative;
+    opacity:0;
+}
+
+label[data-function*='swipe']{
+
+    position:relative;
+    top: 40px;
+    left:10px;
+    z-index: 1;
+    display: block;
+    width:42px;
+    height:42px;
+    font: 42px/42px fontawesome;
+    text-align: center;
+    color: blue;
+    cursor: pointer;
+    transform: translate3d(0, 0, 0);
+    transition: transform .3s;
+}

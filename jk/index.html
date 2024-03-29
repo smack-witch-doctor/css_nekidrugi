@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sidebar-style.css">
+<style>
+/*
+body{
+overflow-x: hidden;
+}
+
+h1 {
+color: white;
+background-color: black;
+text-align: center;
+width: 100%;
+}
+
+h1::after{
+    content:"";
+    background-color:blue;
+    left:100%;
+}
+
+h1::before{
+    content:"";
+    right:100%;
+    background-color: red;
+}
+
+section{
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    width:25rem;
+    padding:30px;
+    padding-bottom: 60px;
+    margin: 0 auto;
+}
+
+
+.full-width{
+position:relative;
+font-size:1.125;
+margin: 0 -30px;
+background-color: black;
+}
+
+
+ukoliko je sirina premala u before i after nece biti dobro kod resize ekrana
+
+content ne zaboravi!
+
+*/
+
+.header{
+    float:left;
+    width:100%;
+    padding: 0.5rem 0;
+}
+
+.header h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color:blue;
+    font-size: 26px;
+    font-weight: 700px;
+    line-height: normal;
+}
+header{
+    display:block;
+
+}
+
+div.header-line{
+box-sizing:border-box;
+margin: 0 auto;
+width:25rem;
+background-color: aliceblue;
+padding: 30px;
+margin:0 auto;
+text-align: center;
+}
+.full-width-header{
+position: relative;
+margin: 0 -30px;
+padding: .25rem 30px;
+background: white;
+color: white;
+font-size: 1.125rem;
+}
+.full-width-header::before, .full-width-header::after{
+    content:"";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 960px;
+    right: 100%;
+    background: red;
+
+}
+
+.full-width-header::after{
+    width:960px;
+    left:100%;
+    background-color: blue;
+
+}
+
+.content{
+    line-height: 28px;
+}
+
+.tabs-container{
+    position: relative;
+    background: blue;
+    width: 120px;
+    height: 100vh;
+    float:left;
+    z-index: 20;
+}
+
+
+.tabs-container:hover{
+    background-color: rgb(134, 134, 212);
+}
+
+.tabs-container label{
+    position:relative;
+    padding: 10px;
+    border-bottom: 1px solid greenyellow;
+    display: block;
+    font-size: 13px;
+    color:whitesmoke;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+input[name="tab"]{
+    display:none;
+}
+
+.tab-content{
+    position:relative;
+    background:#eee;
+    width: calc(100%-120px);
+    min-height: 100vh;
+    padding:15px;
+    float:left;
+    box-sizing: border-box;
+    z-index: 19px;
+    display: none;
+
+}
+
+input[name="tab"]:checked + .tab-content{
+    display:block;
+    animation: slide 0.5s forwards;
+
+}
+.tab-container::after{
+    content:"";
+    clear:both;
+
+}
+.tabs-container:hover{
+    background: darkblue;
+}
+@keyframes slide{
+    from{
+        left:-100%;
+        opacity: 0;
+    }
+
+    to{
+        left:0;
+        opacity:1;
+    }
+}
+
+
+
+
+</style>
+
+
+</head>
+<body>
+
+<header class="header">
+<div class="header-line">
+<h1 class="full-width-header">  Moja stranica sa vertikalnim tabovima</h1>
+</div>
+</header>
+
+<div class="menu-wrapper">
+<!--hamburger meni-->
+<input data-function="swipe" id="swipe" type="checkbox">
+<label data-function="swipe" for="swipe">&#xf0c9</label>
+
+<!--nas vertikalni meni-->
+ <div class="sidebar">
+<section class="tabs-container">
+<label class="tab1">Priroda</label>
+<label class="tab2">Cvijece</label>
+<label class="tab3">Planine</label>
+<label class="tab4">Sume</label>
+<label class="tab5">Fancy cards</label>
+</section>
+
+
+
+
+ </div>
+</div>
+
+<div class="content">
+ 
+    <input name="tab" id="tab1" type="radio" checked>
+    <section class="tab-content">
+        <h2> Priroda</h2>
+        <p>Ovo je neki tekst povezan s prirodom</p>
+        <img src="" alt="more">
+        <p>Opis prirode</p>
+    </section>
+</div>
+
+
+<section class="tabs-container">
+
+<label for="tab1">Home</label>
+<label for="tab2">Priroda</label>
+<label for="tab3">Cvijece</label>
+<label for="tab4">Nesto</label>
+<label for="fancy">Fancy cards</label>
+</section>
+
+<input name="tab" id="tab1" type="radio" checked/>
+<section class="tab-content"></section>
+
+
+
+<input name="tab" id="tab2" type="radio" checked/>
+<section class="tab-content">
+    <p> Contents for tab 2</p>
+</section>
+
+<input name="tab" id="tab3" type="radio"/>
+<section class="tab-content">
+    <h2> Cvijece</h2>
+    <img src="" alt="cvijece">
+</section>
+
+<input name="tab" id="fancy" type="radio"/>
+<section class="tab-content">
+    <h2> Fancy cards</h2>
+    <section class="container">
+        <div class="card">
+         <div class="face face1">
+           <div class="content">
+           <img src="cat.png" class="design">
+           <h3> Design </h3>
+           </div>
+         </div>
+        <div class="face fac2">
+          <div class="content">
+        
+            <p>Lorem ipsum dolor sit amet. 
+            Ut necessitatibus tempore et natus nostrum qui 
+            quidem omnis ut dolorum iste qui consequatur deserunt aut aliquam soluta non internos similique. 
+            Ut tenetur autem et nulla nisi qui ipsam doloremque et eveniet alias quo autem sunt nam dolor quia.</p>
+            <a href="#">Read more</a>
+          </div>
+        
+        </div>
+        
+        
+         </div>
+        
+        <!--pocetak-->
+        
+         <div class="card">
+            <div class="face face1">
+              <div class="content">
+              <img src="smile.png" class="design">
+              <h3> Design </h3>
+              </div>
+            </div>
+           <div class="face fac2">
+             <div class="content">
+           
+               <p>Lorem ipsum dolor sit amet. 
+               Ut necessitatibus tempore et natus nostrum qui 
+               quidem omnis ut dolorum iste qui consequatur deserunt aut aliquam soluta non internos similique. 
+               Ut tenetur autem et nulla nisi qui ipsam doloremque et eveniet alias quo autem sunt nam dolor quia.</p>
+               <a href="#">Read more</a>
+             </div>
+           
+           </div>
+           
+           
+            </div>
+           
+        <!---->
+            <div class="card">
+                <div class="face face1">
+                  <div class="content">
+                  <img src="smile.png" class="design">
+                  <h3> Design </h3>
+                  </div>
+                </div>
+               <div class="face fac2">
+                 <div class="content">
+               
+                   <p>Lorem ipsum dolor sit amet. 
+                   Ut necessitatibus tempore et natus nostrum qui 
+                   quidem omnis ut dolorum iste qui consequatur deserunt aut aliquam soluta non internos similique. 
+                   Ut tenetur autem et nulla nisi qui ipsam doloremque et eveniet alias quo autem sunt nam dolor quia.</p>
+                   <a href="#">Read more</a>
+                 </div>
+               
+               </div>
+               
+               
+                </div>
+               
+        
+        
+        
+        
+        
+        
+        </section>
+
+
+
+
+</section>
+
+</body>
+</html>
